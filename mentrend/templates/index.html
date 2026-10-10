@@ -48,118 +48,39 @@
     </div>
   </section>
 
- 
+  <!-- Product Cards -->
   <div class="products-header" id="ourproducts">
-    <h1>Our Products</h1>
+  <h1>Our Products</h1>
+</div>
+
+<!-- Combined Product Cards Section -->
+<section class="products-container">
+
+  <!-- ==================== HARDCODED PRODUCTS ==================== -->
+  <div class="product-card">
+    <img src="{% static 'images/c1.jpeg' %}" alt="Casual Shirt">
+    <h3>Casual Shirt</h3>
+    <p>₹699</p>
+    <a href="{% url 'buynow' %}?name=Casual+Shirt&price=699" class="buy-btn">Buy Now</a>
   </div>
 
-  <!-- Product Cards -->
-  <section class="products-container">
+  <div class="product-card">
+    <img src="{% static 'images/c2.jpg' %}" alt="Casual Shirt">
+    <h3>Casual Shirt</h3>
+    <p>₹599</p>
+    <a href="{% url 'buynow' %}?name=Casual+Shirt&price=599" class="buy-btn">Buy Now</a>
+  </div>
+
+  {% for product in products %}
     <div class="product-card">
-      <img src="{% static 'images/c1.jpeg' %}" alt="Product 1">
-      <h3>Casual Shirt</h3>
-      <p>₹699</p>
-      <a href="{% url 'buynow' %}?name=Casual+Shirt&price=699" class="buy-btn">Buy Now</a>
+      <img src="{% static product.image_path %}" alt="{{ product.alt_text|default:product.name }}">
+      <h3>{{ product.name }}</h3>
+      <p>₹{{ product.price }}</p>
+      <a href="{% url 'buynow' %}?name={{ product.name|urlencode }}&price={{ product.price }}" class="buy-btn">Buy Now</a>
     </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/c2.jpg' %}" alt="Product 2">
-      <h3>Casual Shirt</h3>
-      <p>₹599</p>
-      <a href="{% url 'buynow' %}?name=Casual+Shirt&price=599" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/c3.jpg' %}" alt="Product 3">
-      <h3>Casual Shirt</h3>
-      <p>₹599</p>
-      <a href="{% url 'buynow' %}?name=Casual+Shirt&price=599" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/j1.jpeg' %}" alt="Product 4">
-      <h3>Men's Jeans</h3>
-      <p>₹599</p>
-      <a href="{% url 'buynow' %}?name=Men's+Jeans&price=599" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/j2.jpeg' %}" alt="Product 5">
-      <h3>Denim Jeans</h3>
-      <p>₹759</p>
-      <a href="{% url 'buynow' %}?name=Denim+Jeans&price=759" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/j3.jpeg' %}" alt="Product 6">
-      <h3>Black Jeans</h3>
-      <p>₹799</p>
-      <a href="{% url 'buynow' %}?name=Black+Jeans&price=799" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/t.jpeg' %}" alt="Product 7">
-      <h3>Casual T-Shirt</h3>
-      <p>₹399</p>
-      <a href="{% url 'buynow' %}?name=Casual+T-Shirt&price=399" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/t1.jpeg' %}" alt="Product 8">
-      <h3>Casual T-Shirt</h3>
-      <p>₹459</p>
-      <a href="{% url 'buynow' %}?name=Casual+T-Shirt&price=459" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/t2.jpeg' %}" alt="Product 9">
-      <h3>Casual T-Shirt</h3>
-      <p>₹529</p>
-      <a href="{% url 'buynow' %}?name=Casual+T-Shirt&price=529" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/t4.jpeg' %}" alt="Product 10">
-      <h3>Casual T-Shirt</h3>
-      <p>₹759</p>
-      <a href="{% url 'buynow' %}?name=Casual+T-Shirt&price=759" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/t5.jpeg' %}" alt="Product 11">
-      <h3>Casual T-Shirt</h3>
-      <p>₹759</p>
-      <a href="{% url 'buynow' %}?name=Casual+T-Shirt&price=759" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/s4.jpeg' %}" alt="Product 12">
-      <h3>Casual Shirt</h3>
-      <p>₹759</p>
-      <a href="{% url 'buynow' %}?name=Casual+Shirt&price=759" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/d1.jpeg' %}" alt="Product 13">
-      <h3>Denim Jacket</h3>
-      <p>₹759</p>
-      <a href="{% url 'buynow' %}?name=Denim+Jacket&price=759" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/s1.jpeg' %}" alt="Product 14">
-      <h3>Slim Fit Jeans</h3>
-      <p>₹859</p>
-      <a href="{% url 'buynow' %}?name=Slim+Fit+Jeans&price=859" class="buy-btn">Buy Now</a>
-    </div>
-  
-    <div class="product-card">
-      <img src="{% static 'images/g1.jpeg' %}" alt="Product 15">
-      <h3>Graphic T-shirt</h3>
-      <p>₹669</p>
-      <a href="{% url 'buynow' %}?name=Graphic+T-shirt&price=669" class="buy-btn">Buy Now</a>
-    </div>
-  </section>  
+  {% endfor %}
+
+</section>
 
 
   <section class="about-section" id="about">

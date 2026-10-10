@@ -14,7 +14,7 @@ from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 import razorpay
 from django.conf import settings
-from .models import ContactMessage
+from .models import ContactMessage, Product
 
 
 def index(request):
@@ -44,6 +44,10 @@ def index(request):
 
         messages.success(request, "Your message has been sent successfully!")
         return redirect('home')
+    products = Product.objects.all()
+    context = {
+      "products": products,
+    }
 
     return render(request, 'index.html')
 
