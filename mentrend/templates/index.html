@@ -53,10 +53,8 @@
   <h1>Our Products</h1>
 </div>
 
-<!-- Combined Product Cards Section -->
 <section class="products-container">
 
-  <!-- ==================== HARDCODED PRODUCTS ==================== -->
   <div class="product-card">
     <img src="{% static 'images/c1.jpeg' %}" alt="Casual Shirt">
     <h3>Casual Shirt</h3>
@@ -73,7 +71,7 @@
 
   {% for product in products %}
     <div class="product-card">
-      <img src="{% static product.image_path %}" alt="{{ product.alt_text|default:product.name }}">
+      <img src="{{ product.image_path.url }}" alt="{{ product.alt_text|default:product.name }}">
       <h3>{{ product.name }}</h3>
       <p>₹{{ product.price }}</p>
       <a href="{% url 'buynow' %}?name={{ product.name|urlencode }}&price={{ product.price }}" class="buy-btn">Buy Now</a>

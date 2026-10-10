@@ -1,0 +1,89 @@
+/* Modern Dashboard Styling Overrides */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #27ae60;
+  --bg-color: #f4f6f9;
+  --card-bg: #ffffff;
+  --text-main: #333333;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Branding */
+#header {
+  background: var(--primary-color) !important;
+  color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#header #branding h1 a {
+  color: #ffffff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Breadcrumbs Bar */
+div.breadcrumbs {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 20px !important;
+  color: #666;
+}
+
+/* Main Content Wrapper / Cards */
+#content {
+  padding: 25px !important;
+}
+
+.module, .dashboard .module {
+  background: var(--card-bg) !important;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border: none !important;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.module h2, .module caption, .inline-group h2 {
+  background: #fafbfc !important;
+  color: var(--primary-color) !important;
+  padding: 15px 20px !important;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Tables styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 12px 15px !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+tr:hover {
+  background-color: #f8f9fa !important;
+}
+
+/* Modern Action Buttons */
+.button, input[type=submit],.submit-row input {
+  background: var(--accent-color) !important;
+  border-radius: 6px !important;
+  border: none !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: opacity 0.2s;
+}
+
+.button:hover, input[type=submit]:hover {
+  opacity: 0.9;
+}

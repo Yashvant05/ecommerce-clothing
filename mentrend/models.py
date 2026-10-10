@@ -7,6 +7,7 @@ class Order(models.Model):
     product_price = models.FloatField()
     quantity = models.IntegerField()
     total_price = models.FloatField()
+    payment_method = models.CharField(max_length=50, default="cod")
     address = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     # payment_method = models.CharField(max_length=10, choices=[('cod', 'Cash on Delivery'), ('online', 'Online')])
@@ -18,7 +19,7 @@ class ContactMessage(models.Model):
     email = models.EmailField()
     subject = models.CharField(max_length=255)
     message = models.TextField()
-    sent_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Message from {self.name} ({self.email})"
@@ -26,9 +27,7 @@ class ContactMessage(models.Model):
 class Product(models.Model):
   name = models.CharField(max_length=200)
   price = models.DecimalField(max_digits=10, decimal_places=2)
-  image_path = models.CharField(
-      max_length=255, help_text="e.g., images/c1.jpeg inside static folder"
-  )
+  image_path = models.ImageField(upload_to="products/", blank=True, null=True)
   alt_text = models.CharField(max_length=200, blank=True, null=True)
 
   def __str__(self):

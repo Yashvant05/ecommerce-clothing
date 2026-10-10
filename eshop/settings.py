@@ -128,6 +128,10 @@ PASSWORD_RESET_TIMEOUT = 3600  # 1 hour
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# Media files (User uploaded files)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 LOGIN_URL = '/login/'
 
 

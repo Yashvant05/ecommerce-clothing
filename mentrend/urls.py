@@ -1,5 +1,10 @@
+from django.contrib import admin
 from django.urls import path
 from . import views
+
+admin.site.site_header = "MenTrend Administration"
+admin.site.site_title = "MenTrend Admin Portal"
+admin.site.index_title = "Welcome to MenTrend Management Dashboard"
 
 urlpatterns = [
     path('', views.index, name='home'),
